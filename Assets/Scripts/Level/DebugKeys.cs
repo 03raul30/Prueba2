@@ -35,7 +35,7 @@ public class DebugKeys : MonoBehaviour
         {
             if (gems[i] != null)
             {
-                gems[i].Damage(1);
+                Destroy(gems[i].gameObject);
                 return;
             }
         }
