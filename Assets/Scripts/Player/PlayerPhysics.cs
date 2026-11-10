@@ -206,6 +206,17 @@ public class PlayerPhysics : MonoBehaviour
         canJump = false;
     }
 
+    void StunEnter()
+    {
+        horizontalSpeed = 0.0f;
+        canJump = false;
+    }
+
+    void StunExit()
+    {
+        ChangeState(PlayerState.Idle);
+    }
+
     void ReadMoveInput()
     {
         Vector2 moveVector = moveInput.action.ReadValue<Vector2>();

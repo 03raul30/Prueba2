@@ -1,21 +1,20 @@
+using System;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] float speed;
+    [SerializeField] Transform platform;
 
-    void Update()
-    {
-        Vector3 position = transform.position;
-        position.x = MyMoveTowards(position.x, target.position.x, speed * Time.deltaTime);
-        transform.position = position;
-    }
 
-    float MyMoveTowards(float current, float target, float maxDelta)
+    private void Start()
     {
-        var position = transform.position;
-        position.x = target * position.x + current;
-        return current;
+        
+        Vector2 horizontalDirection = (target.position - transform.position).normalized;
+        horizontalDirection.y = 0;
+        
+        
+        
     }
 }
